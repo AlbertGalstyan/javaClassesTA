@@ -11,20 +11,21 @@ public class Main{
         checkIfFirstNumberIsBigger(generateRandomNumber());
         checkIfSumIsDivisibleByNumber(generateRandomNumber());
         computeSquaresAndRoot(generateRandomNumber());
-        numbersAreEqual();
-        allNumbersAreUnique();
-        twoNumberAreEqual();
+        numbersAreEqual(generateRandomNumber());
+        allNumbersAreUnique(generateRandomNumber());
+        twoNumberAreEqual(generateRandomNumber());
         threeCharactersAreEqual();
-        generateRandomNumber();
+
 
     }
 
     public static int[] generateRandomNumber() {
         // Here we are generating a random number
-        final int[] ints = new Random().ints(1, 100).distinct().limit(6).toArray();
-        return (ints);
-
+        final int[] i = new Random().ints(1, 100).limit(6).toArray();
+        return (i);
     }
+
+
 
     public static void printCircleData(int[] i) {
         // describe radius, compute area and perimeter (use Math.PI)
@@ -104,19 +105,87 @@ public class Main{
 
     }
 
-    public static void numbersAreEqual() {
+    public static void numbersAreEqual(int[] i) {
         // having 6 number, print true if all number are equal
+        System.out.println("Here we should compare SIX numbers and see if they are same or not");
+        int check = i[0];
+        int counter = 0;
+        System.out.println("Comparing the first number with other five ones");
+        for (int n = 1; n< i.length; n++) {
+           System.out.println(check + " -> " + i[n]);
+           if (check == i[n]) {
+               counter++;
+           }
+       }
+       if (counter == 5) {
+           System.out.println("All nums are equal");
+       }else {
+           System.out.println("Nums are not equal");
+       }
+       System.out.println("--------------------------------------");
+
     }
 
-    public static void allNumbersAreUnique() {
+    public static void allNumbersAreUnique(int[] i) {
         // having 3 number, print true if all numbers are unique
+        System.out.println("Here we should compare Three numbers and see if they are ALL unique");
+        int check = i[0];
+        int counter = 0;
+        System.out.println("Comparing the first number with other Two ones");
+        for (int n = 1; n< 3; n++) {
+            System.out.println(check + " -> " + i[n]);
+            if (check != i[n]) {
+                counter++;
+            }
+        }
+        if (counter == 2) {
+            System.out.println("All nums are unique");
+        }else {
+            System.out.println("Nums are not unique");
+        }
+        System.out.println("--------------------------------------");
+
     }
 
-    public static void twoNumberAreEqual() {
+
+    public static void twoNumberAreEqual(int[] i) {
         // having 3 numbers, print true if two number are equal
+        System.out.println("Here we should compare Three numbers and see if two of them are equal");
+        int check = i[0];
+        int counter = 0;
+        System.out.println("Comparing the first number with other Two ones");
+        for (int n = 1; n< 3; n++) {
+            System.out.println(check + " -> " + i[n]);
+            if (check != i[n]) {
+                counter++;
+            }
+        }
+        if (counter == 1) {
+            System.out.println("Two of nums are equal");
+        }else {
+            System.out.println("All numbers are unique");
+        }
+        System.out.println("--------------------------------------");
     }
 
     public static void threeCharactersAreEqual() {
         // having 4 characters, print true if 3 characters are same
+        System.out.println("Here we should compare four chars and see if three of them are equal");
+        char[] cl = {'/', '/', 'v', '/'};
+        int index = 0;
+        int counter = 0;
+        System.out.println("Comparing the first char with other ones");
+        for (int i = 1; i < cl.length; i++) {
+            System.out.println(cl[index] + " -> " + cl[i]);
+            if (cl[index] == cl[i]) {
+                counter++;
+            }
+        }
+        if (counter == 2) {
+            System.out.println("3 chars are Equal");
+        }else {
+            System.out.println("3 chars are NOT equal");
+        }
+
     }
 }
