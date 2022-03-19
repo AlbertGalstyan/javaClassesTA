@@ -78,13 +78,14 @@ public class Main {
         boolean gendercheck = true;
         String gender = myobject.nextLine();
 
-        if (!gender.equals("men")){
+        if (gender.equals("men")){
+            System.out.println("your gender is" + gender);
+        }else if (gender.equals("women")){
+            System.out.println("your gender is " + gender);
+        }else
             System.out.println("invalid gender");
-        }else if (!gender.equals("women")){
-            System.out.println("invalid gender");
-        }
 
-        System.out.println(name.toUpperCase(Locale.ROOT).substring(0,3));
+//        System.out.println(name.toUpperCase(Locale.ROOT).substring(0,3));
 
 
 
